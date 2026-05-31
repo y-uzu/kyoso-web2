@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生成AIの魅力紹介</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ページのトップ、キャッチコピーを表示 -->
+  <header class="hero">
+    <div class="hero-content">
+      <p class="notice">※ このサイトはお茶の水女子大学共創工学部「デザイン思考とロジックモデル」講義の一環で作成されています（チームH）</p>
+      <h1>生成AIの魅力を知ろう</h1>
+      <p>生活や仕事に取り入れたい人向けに、生成AIの仕組みと代表サービスをやさしく紹介します。</p>
+      <div class="hero-buttons">
+        <button id="scrollBtn" class="primary">はじめての生成AI</button>
+        <button id="learnMoreBtn" class="secondary">もっと知りたい人へ</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 生成AIとは何かを説明するセクション -->
+    <section class="section about" id="about">
+      <div class="section-header">
+        <div class="section-badge">01</div>
+        <h2>生成AIとは？</h2>
+      </div>
+      <p>生成AI（ジェネレーティブAI）は、AIが新しいコンテンツを作り出す技術です。テキストや画像、音声、動画を自動で生成できるため、日常のアイデア作りや学習にも使えます。</p>
+      <p>たとえば、レポートの下書きを作ったり、イメージイラストを自動生成したり、ナレーション付きの動画を作ることもできます。最初は試すだけでも、仕事や勉強での使い方が見えてきます。</p>
+    </section>
+
+    <!-- 生成AIの特徴を3つ紹介 -->
+    <section class="section features" id="features">
+      <div class="section-header">
+        <div class="section-badge">02</div>
+        <h2>生成AIの特徴</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>すぐに使える</h3>
+          <p>ブラウザからすぐ使えるサービスが多く、専門知識がなくてもはじめられます。</p>
+        </article>
+        <article class="feature-card">
+          <h3>表現の幅が広がる</h3>
+          <p>文章・画像・音声・動画を同じAIで組み合わせると、新しい表現が生まれます。</p>
+        </article>
+        <article class="feature-card">
+          <h3>学びにつながる</h3>
+          <p>試しながら使うことで、テクノロジーへの理解が深まり、未来の学びにつながります。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 生成AIの種類と代表例を紹介するセクション -->
+    <section class="section types" id="types">
+      <div class="section-header">
+        <div class="section-badge">03</div>
+        <h2>生成AIの種類と代表的なサービス</h2>
+      </div>
+      <div class="type-grid">
+        <article class="type-card">
+          <div class="type-icon">A</div>
+          <h3>テキスト生成</h3>
+          <p>言葉でやり取りしながら文章をつくるAIです。質問に答えたり、作文や説明文を作成したりできます。</p>
+          <ul>
+            <li>会話の返信を作る</li>
+            <li>レポートやプレゼンの下書きを作る</li>
+            <li>アイデアを整理してまとめる</li>
+          </ul>
+          <p class="links"><a href="https://chat.openai.com" target="_blank" rel="noopener">ChatGPT</a><a href="https://bard.google.com" target="_blank" rel="noopener">Google Bard</a></p>
+        </article>
+        <article class="type-card">
+          <div class="type-icon">B</div>
+          <h3>画像生成</h3>
+          <p>言葉で指示すると、絵や写真のような画像を自動でつくります。デザインやプレゼン資料づくりに使いやすいです。</p>
+          <ul>
+            <li>イメージの試作</li>
+            <li>アイデアを視覚化</li>
+            <li>オリジナルイラストの制作</li>
+          </ul>
+          <p class="links"><a href="https://www.midjourney.com" target="_blank" rel="noopener">Midjourney</a><a href="https://openai.com/dall-e" target="_blank" rel="noopener">DALL·E</a></p>
+        </article>
+        <article class="type-card">
+          <div class="type-icon">C</div>
+          <h3>音声・動画生成</h3>
+          <p>音声や動画を自動で生成するAIです。説明動画やナレーション、短い映像コンテンツが作れます。</p>
+          <ul>
+            <li>音声ナレーションを作る</li>
+            <li>動画の自動生成</li>
+            <li>オンライン発表や教材に活用</li>
+          </ul>
+          <p class="links"><a href="https://runwayml.com" target="_blank" rel="noopener">Runway</a><a href="https://www.synthesia.io" target="_blank" rel="noopener">Synthesia</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- AI診断セクション -->
+    <section class="section quiz" id="quiz">
+      <div class="section-header">
+        <div class="section-badge">05</div>
+        <h2>あなたにぴったりのAI診断</h2>
+      </div>
+      <div class="quiz-card">
+        <p class="quiz-progress" id="quizProgress">質問 1 / 4</p>
+        <p class="quiz-question" id="quizQuestion">あなたは文章や会話でアイデアをまとめたいですか？</p>
+        <div class="quiz-buttons">
+          <button id="yesButton" class="quiz-button primary">はい</button>
+          <button id="noButton" class="quiz-button secondary">いいえ</button>
+        </div>
+        <div class="quiz-result hidden" id="quizResult">
+          <h3>診断結果</h3>
+          <p id="resultText"></p>
+          <button id="restartButton" class="quiz-button secondary">もう一度診断する</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- もっと知りたい人へのメッセージ -->
+    <section class="section call-to-action" id="contact">
+      <div class="section-header">
+        <div class="section-badge">06</div>
+        <h2>もっと知りたい人へ</h2>
+      </div>
+      <p>生成AIを使うことで、勉強も仕事も「考え方」が変わります。まずは気になるサービスを試して、自分に合った使い方を見つけてみましょう。</p>
+      <p class="tip">※ 身近なツールを使いながら、実際の体験を積むことが大切です。</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>生成AIで私たちの可能性を広げよう。</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
