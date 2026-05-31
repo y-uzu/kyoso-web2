@@ -107,3 +107,52 @@ restartButton.addEventListener('click', resetQuiz);
 
 // ページ読み込み時にクイズを初期化します
 resetQuiz();
+
+// ====== 追加のインタラクション ======
+// Reveal-on-scroll: IntersectionObserver を使って要素をフェードイン表示
+document.addEventListener('DOMContentLoaded', () => {
+  const revealTargets = document.querySelectorAll('.feature-card, .type-card, .quiz-card, .hero-content, .section');
+
+  // 初期状態として 'reveal' クラスを付与
+  revealTargets.forEach(el => el.classList.add('reveal'));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // セクションなら強調クラスを追加
+        if (entry.target.classList.contains('section')) {
+          entry.target.classList.add('in-view');
+        }
+      } else {
+        entry.target.classList.remove('visible');
+        if (entry.target.classList.contains('section')) {
+          entry.target.classList.remove('in-view');
+        }
+      }
+    });
+  }, { threshold: 0.18 });
+
+  revealTargets.forEach(el => io.observe(el));
+
+  // Back-to-top ボタン
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 380) backToTop.classList.add('show');
+      else backToTop.classList.remove('show');
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // クイズのキーボードショートカット: Y=はい, N=いいえ, R=リスタート
+  document.addEventListener('keydown', (e) => {
+    const key = e.key.toLowerCase();
+    if (key === 'y') yesButton.click();
+    if (key === 'n') noButton.click();
+    if (key === 'r') restartButton.click();
+  });
+});
